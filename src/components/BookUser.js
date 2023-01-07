@@ -2,6 +2,7 @@ import {useState,useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import { ErrorPage } from './ErrorPage';
 import {fetchBookingDetails} from '../utils/resource';
+import { Header } from './Header';
 
 import { sendEmail } from '../utils/resource';
 
@@ -45,6 +46,9 @@ export const BookUser = () => {
   }
 
   return (
+    <>
+    <Header />
+    
     <div className="container-Book">
         <h2 className="line-bottom">Book a session with {user}</h2>
         <form className="form" onSubmit={handleSubmit}>
@@ -98,5 +102,7 @@ export const BookUser = () => {
         </form>
 
     </div>
+    </>
   )
+  
 }

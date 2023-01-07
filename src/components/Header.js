@@ -10,8 +10,7 @@ export const Header = () => {
 
     navigate('/');
   }
-  const perfil = `/book/${localStorage.getItem('username')}`;
-
+  
   return (
     <header className="header-principal">
         <div className="logo">
@@ -19,8 +18,9 @@ export const Header = () => {
         </div>
         <div className="navbar">
             <Link className="nav-li" to='/dashboard'>Inicio</Link>
-            <Link className="nav-li" to={perfil}>Nuevo evento</Link>
-            <span className="nav-li" href='/dashboard'>{localStorage.getItem('username')}</span>
+            <Link className="nav-li" to='/dashboard'>Nuevo calendario</Link>
+            <Link className="nav-li" to={`/book/${localStorage.getItem('username')}`}>Nuevo evento</Link>
+            <span className="nav-li" >{localStorage.getItem('username')}</span>
             <span className="nav-li btn" onClick={handleLogout}>Cerrar sesion</span>
             
         </div>

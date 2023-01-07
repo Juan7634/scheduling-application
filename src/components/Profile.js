@@ -28,7 +28,7 @@ export const Profile = () => {
   },[navigate]);
 
   useEffect(()=>{
-      getDetailsUser(id)
+      getDetailsUser(localStorage.getItem('id'))
         .then(data =>{
           
             setSchedule(data.schedule);
@@ -36,7 +36,7 @@ export const Profile = () => {
             setUsername(data.username.username);
             setIsLoading(false);
         }).catch(err =>{
-          toast.error(err);
+          navigate('/error');
         })
   },[id])
 

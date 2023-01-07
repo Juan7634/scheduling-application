@@ -1,7 +1,7 @@
 import {useState,useEffect} from 'react';
 import TimezoneSelect from "react-timezone-select";
 import { useNavigate } from "react-router-dom";
-import { time, handleSaveSchedule } from '../utils/resource';
+import { time, handleSaveSchedule,verifySchedule } from '../utils/resource';
 
 
 import { Header } from './Header';
@@ -29,6 +29,14 @@ export const Dashboard = () => {
       }
 
     },[navigate]);
+
+    useEffect(() => {
+        if(verifySchedule()){
+          navigate(`/profile/${localStorage.getItem('username')}`);
+        }
+    });
+
+    
 
     
 

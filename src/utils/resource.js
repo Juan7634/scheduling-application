@@ -101,6 +101,8 @@ export async function getDetailsUser(id){
 
             const response = await axios.get(`http://127.0.0.1:4000/api/schedule/${id}`);
 
+            // console.log(response.data);
+
             if(response.data.message){
                 return response.data
             }
@@ -109,7 +111,7 @@ export async function getDetailsUser(id){
             }
 
         }catch(err){
-            console.error(err);
+            console.log(err);
             toast.error('Ocurred Error, refresh page');
         }
     }
@@ -169,4 +171,20 @@ export const sendEmail = (receiverEmail,email,fullName,notes,duration,username) 
         toast.error(error.text);
     }
     )
+}
+
+
+export const verifySchedule = async()=>{
+    try{
+
+        const resp = await axios.get(`http://127.0.0.1:4000/api/schedule/verify/${localStorage.getItem('id')}`);
+        
+        return resp.data.verify ? true : false;
+        // setVerifySchedule(resp.data.verify);
+        
+
+    }catch(err){
+        console.error(err);
+        toast.error('Ocurred Error, refresh page');
+    }
 }
