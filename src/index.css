@@ -1,13 +1,494 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;700&display=swap');
+
+
+
+:root{
+    --color_principal_light: #fff;
+    --color_principal_dark: #000;
+    --color_secundario_light: #f3f3f3;
+
+    --colorLetterTitle: #fff;
+    --colorText: #b0b0b0;
+    --colorLetterButton: #B4B4B4;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     /* font-family: Modern ligth, sans-serif;  */
+     font-family: 'Yantramanav', sans-serif;
 }
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./img/background_Login_4k.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    /* justify-content: center; */
+}
+
+.form-container{
+    width: 80vw;
+    height: 90vh;
+    background-color: rgba(0,0,0,0.5);
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.reverse-colum{
+    flex-direction: row-reverse;
+}
+
+.titles{
+   width: 100%;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text h1{
+    color: var(--colorLetterTitle);
+    font-size: 3.4rem;
+    font-family: Modern ligth,sans-serif;
+    
+    
+}
+
+.text p .dark{
+    color: var(--colorText);
+    font-size: 0.9rem;
+    font-family: Modern ligth,sans-serif;
+}
+.text .light{
+    color: var(--colorLetterTitle);
+    font-size: 0.9rem;
+    font-family: Modern ligth, sans-serif;
+}
+
+a{
+    text-decoration: none;
+
+}
+
+.form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form form{
+    max-width: 300px;
+    height:auto;
+    
+}
+
+.form form .inputs{
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    color: #fff;
+    outline: none;
+
+}
+
+
+
+#btn-login{
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    margin-top:20px;
+    border: none;
+    color: #fff;
+    border:  2px solid #fff;
+    transition: background-color 0.3s ease-in-out, color 0.2s ease-in-out;
+    font-size: 1rem;
+    
+}
+
+#btn-login:hover{
+    background-color: rgba(255,255,255,1);
+    color: #000;
+}
+
+
+
+/* Section Header */
+.header-principal{
+    width: 100vw;
+    height:70px;
+    background-color:rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color:#fff;
+}
+
+.header-principal .logo{
+    width: 50px;
+    height: 50px;
+    padding-left:10px;
+}
+.header-principal .logo{
+    width: 100%;
+    
+}
+
+.header-principal .navbar{
+    width: auto;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-decoration: none;
+    
+}
+.header-principal .navbar .nav-li{
+    width: 100px;
+    height:30px;
+    color: #fff;
+    text-align: center;
+    padding-top: 5px;
+    margin-right: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    
+}
+
+.header-principal .navbar .nav-li:hover{
+    cursor: pointer;
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+}
+
+.btn:hover{
+    
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+
+}
+
+/* End Section Header */
+
+
+/* Section Dashboard Main */
+.dashboard_main{
+    margin-top:40px;
+    width: 100%;
+    height: 500px;
+    text-align: center;
+}
+
+
+.dashboard_main .timezone__wrapper{
+    width: 300px;
+    margin: 0 auto;
+    margin:40px auto;
+    
+}
+
+
+
+
+.btn-f{
+    margin: 40px 0px;
+    width:120px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-save{
+    /* background-color: rgb(44, 144, 226); */
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+.btn-save:hover{
+    background-color: rgb(62, 132, 223);
+    color: white;
+}
+
+
+.content-day{
+    width: 70%;
+    height: 80px;
+    /* border: 2px solid #f0f0f0; */
+    /* box-shadow: 2px 3px 5px rgba(0,0,0,0.16); */
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;    
+    justify-content:center;
+    gap: 40px;
+    align-items: center;
+}
+
+
+.selects-content{
+    /* width: 100%; */
+    height:80px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.selects-content > select{
+    width: 150px;
+    height:30px;
+    text-align: center;
+    border: 2px solid #b6b6b6;
+    background-color: #fff;
+}
+
+.selects-content > select  option{
+    text-align: center
+
+}
+
+
+/* Section profile  */
+.profile-main{
+    width: 100vw;
+    height: 100%;
+
+}
+
+.profile-main .container-profile{
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+
+
+.container__table{
+    width: 100%;
+    height: auto;
+}
+
+.container__table table{
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+}
+
+.container__table table tbody tr{
+    width: 100%;
+    height: 50px;
+    
+    
+}
+
+.container__table table tbody tr td:first-child{
+    
+    font-weight: bold;
+}
+
+.container__table table tbody tr td{
+    padding-left: 10px;
+    border: 2px solid #f0f0f0;
+    
+}
+
+.spacing-text{
+    margin-top:40px;
+    margin-bottom: 15px;
+}
+
+/* End section profile */
+
+
+
+
+
+/* End Section Dashboard Main */
+
+
+/* Section Book session */
+.container-Book{
+    padding-top: 50px;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+
+
+}
+
+.container-Book .form{
+    
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 40px;
+    border: 2px solid #f0f0f0;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 40px;
+    padding-top: 20px;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+.container-Book .form, input, .container-Book .form textarea{
+
+    margin-bottom: 20px;
+    
+
+}
+
+.input-form{
+    width:80%;
+    height: 40px;
+    border: none;
+    background-color: #f0f0f0;
+    padding-left: 10px;
+}
+.input-text{
+    width:80%;
+    min-height: 80px;
+    overflow-y: auto;
+    border: none;
+    background-color: #f0f0f0;
+    padding: 10px 10px;
+    resize: none;
+}
+
+.line-bottom{
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #cdcdcd;
+}
+
+/* End session Book session */
+
+/* Section Error */
+.container-error{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.content-error{
+    width: 400px;
+    height: 200px;
+    text-align: center;
+}
+
+.content-error h1{
+    font-size: 7rem;
+    color: #000;
+    text-align: center;
+    margin-bottom: -10px;
+}
+.content-error p{
+    font-size: 1rem;
+    color: #707070;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.content-error .link{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.content-error .link .a{
+    
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: #fff;
+    color: #464646;
+    transition: all 0.2s ease-in-out;
+}
+
+.content-error .link .a:hover{
+    background-color: #464646;
+    color: #fff;
+}
+
+/* Select Format*/
+.select-f{
+    width:90%;
+    height:35px;
+    /* margin: 0 auto; */
+    border: none;
+    border-radius:4px;
+    border: 1px solid rgba(0,0,0,0.5);
+    text-align: center;
+    background-color:#fff;
+    margin-top:20px;
+    
+}
+
+/* End Select Format */
+
+.text-small{
+    font-size:15px;
+    text-align: left;
+}
+
+
+
+
+
+
+/* End Section Error */
+
+
+@media (max-width: 900px){
+    .form-container{
+        flex-direction: column;
+        gap: 2em;
+        justify-content: center;
+    }
+    .titles{
+        height: 200px;
+        text-align: center;
+    }
+    .form form .inputs{
+        text-align: center;
+    
+    }
+
+
+}
+
+
+
+@media (max-width: 400px ){
+    .form{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:auto
+    }
+    .form form .inputs{
+        text-align: center;
+    
+    }
+    
+}
+
